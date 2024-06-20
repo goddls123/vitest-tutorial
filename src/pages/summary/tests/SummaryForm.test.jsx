@@ -4,7 +4,7 @@ import SummaryForm from "../SummaryForm";
 import userEvent from "@testing-library/user-event";
 
 describe("SummaryForm", () => {
-  it("initial contindions", () => {
+  it("initial conditions", () => {
     render(<SummaryForm />);
     const checkBox = screen.getByRole("checkbox", {
       name: /terms and conditions/i,
