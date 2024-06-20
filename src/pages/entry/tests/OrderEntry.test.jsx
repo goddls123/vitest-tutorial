@@ -2,7 +2,7 @@ import { expect } from "vitest";
 import { server } from "../../../mocks/server";
 import { BASE_URL } from "../../../mocks/handlers";
 import { HttpResponse, http } from "msw";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 import OrderEntry from "../OrderEntry";
 
 test("hanlders error for scoops and toppings routes", async () => {
