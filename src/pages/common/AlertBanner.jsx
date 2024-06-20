@@ -1,9 +1,9 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
 
-export default function AlertBanner({ messgage, variant }) {
+export default function AlertBanner({ message, variant }) {
   const alertMessage =
-    messgage || "An unexpected error occured. Please try again later.";
+    message || "An unexpected error occured. Please try again later.";
 
   const alertVariant = variant || "danger";
   return (

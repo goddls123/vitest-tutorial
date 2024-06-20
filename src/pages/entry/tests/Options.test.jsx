@@ -1,6 +1,6 @@
 import { describe, expect } from "vitest";
 import Options from "../Options";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 
 describe("options test", () => {
   it("displays image for each scoop option from server", async () => {
