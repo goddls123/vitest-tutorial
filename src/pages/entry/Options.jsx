@@ -15,13 +15,18 @@ export default function Options({ optionType }) {
   const { totals } = useOrderDetails();
 
   useEffect(() => {
+    const controller = new AbortController();
+
     if (!optionType) return;
     axios
-      .get(`${BASE_URL}/${optionType}`)
+      .get(`${BASE_URL}/${optionType}`, { signal: controller.signal })
       .then((response) => setItems(response.data))
       .catch((error) => {
         setError(true);
       });
+    return () => {
+      controller.abort();
+    };
   }, [optionType]);
 
   if (error) {
