@@ -8,7 +8,7 @@ export function useOrderDetails() {
 
   if (!contextValue) {
     throw new Error(
-      "useOrderDetails must be used within an OrderDetailsProvider"
+      "useOrderDetails must be called from within an OrderDetailsProvider"
     );
   }
 
@@ -39,7 +39,7 @@ export function OrderDetailsProvider(props) {
     toppings: calculateTotal("toppings"),
   };
 
-  const value = { optionCounts, updateItemCount, resetOrder, totals };
+  const value = { optionCounts, totals, updateItemCount, resetOrder };
 
   return <OrderDetails.Provider value={value} {...props} />;
 }

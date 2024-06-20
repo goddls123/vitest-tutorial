@@ -1,15 +1,15 @@
 import { Col, Form, Row } from "react-bootstrap";
-import { BASE_URL } from "../../mocks/handlers";
 import { useOrderDetails } from "../../contexts/OrderDetails";
 
 export default function ScoopOptions({ name, imagePath }) {
   const { updateItemCount } = useOrderDetails();
-  const handleChange = (e) => updateItemCount(name, e.target.value, "scoops");
+  const handleChange = (e) =>
+    updateItemCount(name, parseInt(e.target.value), "scoops");
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: "center" }}>
       <img
         style={{ width: "75%" }}
-        src={`${BASE_URL}/${imagePath}`}
+        src={`http://localhost:3030/${imagePath}`}
         alt={`${name} scoop`}
       />
       <Form.Group
